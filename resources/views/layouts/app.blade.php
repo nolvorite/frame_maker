@@ -13,14 +13,14 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-
+    <!-- Scripts -->
+    
     <link rel="stylesheet" href="/dist/app.css" type="text/css">
-
     <script type="text/javascript" src="/dist/app.js"></script>
 </head>
-<body>
+<body data-bs-theme="dark">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark shadow-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
