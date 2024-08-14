@@ -14,17 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if(Auth::check()){
+        return redirect('/login');
+    }else{
+        return route('home');
+    }
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
+    Route::resource('clips', App\Http\Controllers\ClipController::class);
+    Route::resource('media', App\Http\Controllers\MediaController::class);
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

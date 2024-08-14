@@ -14,14 +14,17 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
+
+    <link rel="icon" href="/images/icon.png">
     
     <link rel="stylesheet" href="/dist/app.css" type="text/css">
     <script type="text/javascript" src="/dist/app.js"></script>
+    <script type="text/javascript" src="/dist/vues.js" defer></script>
 </head>
-<body data-bs-theme="dark">
+<body data-bs-theme="dark" data-theme="dark">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark shadow-lg">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -78,5 +81,7 @@
             @yield('content')
         </main>
     </div>
+
+    @yield('javascripts')
 </body>
 </html>
